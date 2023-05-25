@@ -2,14 +2,16 @@
 
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Sticker from "./Components/Sticker/Sticker";
+import Main from "./Components/Main/Main";
+import Aside from "./Components/Aside/Aside";
 
 function App() {
   /*   const [count, setCount] = useState(0); */
 
   return (
     <>
-      <Sticker />
+      <Main />
+      <Aside />
     </>
   );
 }
