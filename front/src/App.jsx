@@ -10,8 +10,8 @@ function App() {
 
   return (
     <div className="divAppContainer">
-      <Main />
       <Aside />
+      <Main />
     </div>
   );
 }
