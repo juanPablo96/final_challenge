@@ -1,0 +1,12 @@
+.divCardContainer {
+  display: inline-block;
+  margin-top: 80px;
+}
+
+span {
+  margin-left: 20px;
+}
+
+.backGround-Uruguay {
+  border: rgb(12, 12, 140);
+}

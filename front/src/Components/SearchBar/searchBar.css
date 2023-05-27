@@ -1,0 +1,9 @@
+/* .divSearchBarContainer {
+  display: flex;
+  justify-content: center;
+} */
+
+.inputSearchBar {
+  height: 3rem;
+  width: 16rem;
+}
