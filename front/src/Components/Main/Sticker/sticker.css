@@ -10,3 +10,7 @@ span {
 .backGround-Uruguay {
   border: rgb(12, 12, 140);
 }
+
+label {
+  margin-right: 10px;
+}

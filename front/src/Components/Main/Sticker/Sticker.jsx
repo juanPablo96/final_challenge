@@ -3,10 +3,18 @@ import "./sticker.css";
 import iniesta from "/spain/iniesta.png";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 import { useEffect, useState } from "react";
 
 const Sticker = () => {
   const [stickers, setStickers] = useState([]);
+  const [add, setAdd] = useState(`{sticker.quantity}`);
+
+  const buttonAdd = () => {
+    setAdd(add + 1);
+    console.log(add);
+  };
 
   useEffect(() => {
     const fetchSticker = async () => {
@@ -38,13 +46,13 @@ const Sticker = () => {
         console.log(sticker.name);
         return (
           <div className="divCardContainer">
-            {sticker.own ? (
+            {sticker.own && sticker.quantity > 0 ? (
               /************* SI TENGO LA FIGURITA EN LA COLECCION **********/
               <Card
                 style={{
                   width: "13rem",
                   marginLeft: "50px",
-                  height: "25rem",
+                  height: "29rem",
                   border: "2px solid",
                   borderColor: `green`,
                 }}
@@ -70,6 +78,23 @@ const Sticker = () => {
                       Tengo
                     </Button>
                   </div>
+
+                  <InputGroup
+                    className="mb-3"
+                    style={{
+                      padding: "8px",
+                    }}
+                  >
+                    <label>Cantidad:</label>
+                    <Button variant="outline-secondary" onChange={buttonAdd}>
+                      Guardar
+                    </Button>
+                    {/*  <Button variant="outline-secondary">-1</Button> */}
+                    <Form.Control
+                      defaultValue={sticker.quantity}
+                      type="number"
+                    />
+                  </InputGroup>
                 </Card.Body>
               </Card>
             ) : (
