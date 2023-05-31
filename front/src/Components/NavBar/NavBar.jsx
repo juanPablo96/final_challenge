@@ -9,6 +9,40 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
 function NavBar() {
+  /* 
+  function handleChange(e) {
+      e.preventDefault(); 
+    console.log(e.target.value);
+    props.setPokedex(
+      Pokedex.filter((item) => {
+        return item.Name.toLowerCase().includes(e.target.value);
+      })
+    );
+  }
+   ************* FILTRO NOMBRE ********** 
+  const onclickName = () => {
+    console.log("pepito");
+    const orderName = sticker.country.sort((a, b) => {
+      if (a.Name < b.Name) {
+        return -1;
+      }
+      if (a.Name > b.Name) {
+        return 1;
+      }
+      // a debe ser igual b
+      return 0;
+    });
+    console.log(orderName);
+    props.setPokedex([...orderName]);
+  };
+
+  
+
+  const showSort = () => {
+    setClickButton(!clickButton); 
+    }
+ */
+
   return (
     <Navbar expand="sm" bg="dark" variant="dark" fixed="top">
       <Container

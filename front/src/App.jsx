@@ -2,9 +2,10 @@
 
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Main from "./Components/Main/Main";
+import Main from "./Components/Page/Main";
 import Aside from "./Components/Aside/Aside";
 import NavBar from "./Components/NavBar/NavBar";
+import Collection from "./Components/Page/Collection";
 
 function App() {
   /*   const [count, setCount] = useState(0); */
