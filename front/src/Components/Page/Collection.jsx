@@ -1,6 +1,7 @@
 import React from "react";
 import Sticker from "./Sticker/Sticker";
 import { useState, useEffect } from "react";
+import NavBar from "../NavBar/NavBar";
 const Collection = () => {
   const [stickers, setStickers] = useState([]);
 
@@ -30,6 +31,7 @@ const Collection = () => {
 
   return (
     <>
+      <NavBar />
       {stickers.map((sticker) => {
         /*         console.log(sticker.name); */
         return (

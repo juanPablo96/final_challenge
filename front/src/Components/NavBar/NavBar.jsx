@@ -7,6 +7,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   /* 
@@ -51,11 +52,14 @@ function NavBar() {
           flexDirection: "row",
         }}
       >
-        <Navbar.Brand href="#home">Álbum</Navbar.Brand>
+        <Navbar.Brand href="#Album">Álbum</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#miColección">Mi Colección</Nav.Link>
-
+          <Link to="/">
+            <Nav.Link href="#home">Home</Nav.Link>
+          </Link>
+          <Link to={"/myCollection"}>
+            <Nav.Link href="#miColección">Mi Colección</Nav.Link>
+          </Link>
           <ButtonGroup>
             <DropdownButton
               as={ButtonGroup}
