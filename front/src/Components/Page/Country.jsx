@@ -1,6 +1,7 @@
 import React from "react";
 import Sticker from "./Sticker/Sticker";
 import { useState, useEffect } from "react";
+import NavBar from "../NavBar/NavBar";
 const Country = () => {
   const [stickers, setStickers] = useState([]);
 
@@ -30,6 +31,9 @@ const Country = () => {
 
   return (
     <>
+      <NavBar />
+      <h1 className="headerApp">Mundial de Sudáfrica 2010</h1>
+
       {stickers.map((sticker) => {
         /*         console.log(sticker.name); */
         return (

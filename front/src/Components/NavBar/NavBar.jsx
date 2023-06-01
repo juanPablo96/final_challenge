@@ -54,12 +54,14 @@ function NavBar() {
       >
         <Navbar.Brand href="#Album">Álbum</Navbar.Brand>
         <Nav className="me-auto">
-          <Link to="/">
-            <Nav.Link href="#home">Home</Nav.Link>
-          </Link>
-          <Link to={"/myCollection"}>
-            <Nav.Link href="#miColección">Mi Colección</Nav.Link>
-          </Link>
+          <Nav.Link to="/" as={Link}>
+            Home
+          </Nav.Link>
+
+          <Nav.Link to="/myCollection" as={Link}>
+            Mi Colección
+          </Nav.Link>
+
           <ButtonGroup>
             <DropdownButton
               as={ButtonGroup}
@@ -68,8 +70,9 @@ function NavBar() {
               variant="dark"
               style={{ marginTop: "-7px" }}
             >
-              <Dropdown.Item eventKey="1">País</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
+              <Dropdown.Item eventKey="1" to="/filtered/country" as={Link}>
+                País
+              </Dropdown.Item>
             </DropdownButton>
           </ButtonGroup>
 

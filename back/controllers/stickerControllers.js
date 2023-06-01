@@ -57,9 +57,10 @@ exports.showMyStickers = async (req, res) => {
 exports.showMyStickersfilter = async (req, res) => {
   try {
     const resultado = await knex
+      .column("number")
+      .orderBy("number")
       .select("*")
-      .from("sticker")
-      .where({ country: (country = "Uruguay") });
+      .from("sticker");
 
     if (resultado.length === 0) {
       return res.status(200).json(`ésta es tu colección de figuritas`);

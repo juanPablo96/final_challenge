@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import "./index.css";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
 import Collection from "./Components/Page/Collection.jsx";
+import Country from "./Components/Page/Country.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,11 @@ const router = createBrowserRouter([
   {
     path: "/myCollection",
     element: <Collection />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/filtered/country",
+    element: <Country />,
     errorElement: <ErrorPage />,
   },
 ]);

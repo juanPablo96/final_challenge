@@ -14,7 +14,7 @@ function App() {
       <div className="divAppContainer">
         {/*   <Aside /> */}
         <NavBar />
-        {/*   <Country /> */}
+
         <Main />
       </div>
     </>
