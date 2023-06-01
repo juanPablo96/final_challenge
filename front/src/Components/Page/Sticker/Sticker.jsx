@@ -13,11 +13,14 @@ const Sticker = (props) => {
 
   const [quantity, setQuantity] = useState(props.sticker.quantity);
   const buttonAdd = () => {
-    console.log(own);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({ id: props.sticker.id, quantity: quantity });
+    var raw = JSON.stringify({
+      id: props.sticker.id,
+      quantity: quantity,
+      own: own,
+    });
 
     var requestOptions = {
       method: "PUT",
@@ -30,16 +33,14 @@ const Sticker = (props) => {
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-
-    /*  if (props.sticker.quantity >= 1) {
-      setOwn(true);
-    } else {
-      setOwn(false);
-    } */
   };
 
   const changeInput = (e) => {
-    setQuantity(e.target.value);
+    if (setQuantity(e.target.value) > 0) {
+      setOwn(own);
+    } else {
+      setOwn(!own);
+    }
   };
 
   const showSort = () => {
@@ -79,7 +80,7 @@ const Sticker = (props) => {
               justifyContent: "center",
             }}
           >
-            {props.sticker.own && props.sticker.quantity >= 1 ? (
+            {props.sticker.quantity >= 1 ? (
               <Button variant="success" size="lg" onClick={showSort}>
                 Tengo
               </Button>

@@ -1,8 +1,7 @@
 import React from "react";
 import Sticker from "./Sticker/Sticker";
 import { useState, useEffect } from "react";
-import NavBar from "../NavBar/NavBar";
-const Collection = () => {
+const Country = () => {
   const [stickers, setStickers] = useState([]);
 
   useEffect(() => {
@@ -12,7 +11,7 @@ const Collection = () => {
       };
       try {
         const response = await fetch(
-          "http://localhost:8000/api/showMyStickers",
+          "http://localhost:8000/api/stickersFiltered",
           requestOptions
         );
         /*  console.log(response); */
@@ -31,10 +30,8 @@ const Collection = () => {
 
   return (
     <>
-      <NavBar />
-      <h1 className="headerApp">Mundial de Sudáfrica 2010</h1>
-
       {stickers.map((sticker) => {
+        /*         console.log(sticker.name); */
         return (
           <div key={sticker.id} className="divCardContainer">
             <Sticker sticker={sticker} />
@@ -45,4 +42,4 @@ const Collection = () => {
   );
 };
 
-export default Collection;
+export default Country;
