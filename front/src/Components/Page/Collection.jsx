@@ -32,10 +32,12 @@ const Collection = () => {
   return (
     <>
       <NavBar />
+      <h1 className="headerApp">Mundial de Sudáfrica 2010</h1>
+
       {stickers.map((sticker) => {
         /*         console.log(sticker.name); */
         return (
-          <div className="divCardContainer">
+          <div key={sticker.id} className="divCardContainer">
             <Sticker sticker={sticker} />
           </div>
         );

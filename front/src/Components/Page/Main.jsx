@@ -33,7 +33,7 @@ const Main = () => {
       {stickers.map((sticker) => {
         /*         console.log(sticker.name); */
         return (
-          <div className="divCardContainer">
+          <div key={sticker.id} className="divCardContainer">
             <Sticker sticker={sticker} />
           </div>
         );

@@ -8,11 +8,15 @@ import NavBar from "./Components/NavBar/NavBar";
  */
 function App() {
   return (
-    <div className="divAppContainer">
-      {/*   <Aside /> */}
-      <NavBar />
-      <Main />
-    </div>
+    <>
+      <h1 className="headerApp">Mundial de Sudáfrica 2010</h1>
+      <div className="divAppContainer">
+        {/*   <Aside /> */}
+        <NavBar />
+
+        <Main />
+      </div>
+    </>
   );
 }
 

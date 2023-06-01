@@ -8,10 +8,12 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { useState } from "react";
 
 const Sticker = (props) => {
+  const [own, setOwn] = useState(props.sticker.own);
   const [clickButton, setClickButton] = useState(false);
 
   const [quantity, setQuantity] = useState(props.sticker.quantity);
   const buttonAdd = () => {
+    console.log(own);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -28,6 +30,12 @@ const Sticker = (props) => {
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+
+    /*  if (props.sticker.quantity >= 1) {
+      setOwn(true);
+    } else {
+      setOwn(false);
+    } */
   };
 
   const changeInput = (e) => {
@@ -40,7 +48,6 @@ const Sticker = (props) => {
   return (
     <>
       <Card
-        key={props.sticker.id}
         style={{
           width: "13rem",
           marginLeft: "50px",
@@ -49,11 +56,17 @@ const Sticker = (props) => {
           borderColor: `green`,
         }}
       >
-        <Card.Img variant="top" src={`${props.sticker.img}`} />
+        <Card.Img
+          width={100}
+          height={220}
+          alt="171x180"
+          variant="top"
+          src={`${props.sticker.img}`}
+        />
         <Card.Body>
           <Card.Title
             style={{
-              fontSize: "18px",
+              fontSize: "16px",
             }}
           >
             {props.sticker.name}
@@ -66,7 +79,7 @@ const Sticker = (props) => {
               justifyContent: "center",
             }}
           >
-            {props.sticker.own && props.sticker.quantity > 0 ? (
+            {props.sticker.own && props.sticker.quantity >= 1 ? (
               <Button variant="success" size="lg" onClick={showSort}>
                 Tengo
               </Button>
@@ -109,38 +122,3 @@ const Sticker = (props) => {
 };
 
 export default Sticker;
-
-/*  Botton de cantidad que cuando haga click se despligue un cartel con la cantidad de figurtias
-
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Toast from 'react-bootstrap/Toast';
-
-function DismissibleExample() {
-  const [showA, setShowA] = useState(true);
-  
-
-  const toggleShowA = () => setShowA(!showA);
- 
-  return (
-    <Row>
-      <Col md={6} className="mb-2">
-        <Button onClick={toggleShowA} className="mb-2">
-          Toggle Toast <strong>with</strong> Animation
-        </Button>
-        <Toast show={showA} onClose={toggleShowA}>
-          <Toast.Header>
-            <h3>cantidad </h3>
-           
-          </Toast.Header>
-          <Toast.Body><input/></Toast.Body>
-        </Toast>
-      </Col>
-     
-    </Row>
-  );
-}
-
-export default DismissibleExample; */
