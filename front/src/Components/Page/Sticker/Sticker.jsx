@@ -36,11 +36,27 @@ const Sticker = (props) => {
   };
 
   const changeInput = (e) => {
-    if (setQuantity(e.target.value) > 0) {
-      setOwn(own);
-    } else {
-      setOwn(!own);
+    /*  setQuantity(e.target.value); */
+    /*  console.log(setQuantity(parseInt(e.target.value)) == 0); */
+
+    const newQuantity = parseInt(e.target.value);
+    if (newQuantity > 0 && own === false) {
+      setOwn(true);
     }
+    if (newQuantity === 0 && own === true) {
+      setOwn(false);
+    }
+    setQuantity(newQuantity);
+
+    /*    if (setQuantity(parseInt(e.target.value)) >= 1) {
+      console.log(e.target.value);
+      setOwn(true);
+    }
+    if (setQuantity(parseInt(e.target.value)) == 0) {
+      setOwn(false);
+    } else {
+      setOwn(true);
+    } */
   };
 
   const showSort = () => {
@@ -49,15 +65,17 @@ const Sticker = (props) => {
   return (
     <>
       <Card
-        style={{
+        className="cardStyles"
+        /*  style={{
           width: "13rem",
           marginLeft: "50px",
           height: "29rem",
           border: "2px solid",
           borderColor: `green`,
-        }}
+        }} */
       >
         <Card.Img
+          className="cardImgStyles"
           width={100}
           height={220}
           alt="171x180"
@@ -67,7 +85,7 @@ const Sticker = (props) => {
         <Card.Body>
           <Card.Title
             style={{
-              fontSize: "16px",
+              fontSize: "17px",
             }}
           >
             {props.sticker.name}
