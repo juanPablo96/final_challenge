@@ -74,9 +74,6 @@ function NavBar() {
               </Dropdown.Item>
             </DropdownButton>
           </ButtonGroup>
-          <Nav.Link to="/myCollection" as={Link}>
-            Mi Colección
-          </Nav.Link>
 
           <ButtonGroup>
             <DropdownButton
@@ -102,6 +99,9 @@ function NavBar() {
               </Dropdown.Item>
             </DropdownButton>
           </ButtonGroup>
+          <Nav.Link to="/myCollection" as={Link}>
+            Mi Colección
+          </Nav.Link>
 
           <SearchBar />
         </Nav>

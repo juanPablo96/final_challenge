@@ -40,6 +40,7 @@ exports.changeQuantity = async (req, res) => {
   }
 };
 
+/* Mi colección */
 exports.showMyStickers = async (req, res) => {
   try {
     const resultado = await knex
@@ -56,6 +57,7 @@ exports.showMyStickers = async (req, res) => {
     return res.status(400).json({ error: error.message });
   }
 };
+
 /* Filtrado por Paises de Mundial 2010 */
 exports.showMyStickersfilterSouthafrica = async (req, res) => {
   try {
@@ -77,7 +79,6 @@ exports.showMyStickersfilterSouthafrica = async (req, res) => {
 };
 
 /* Figuritas mundial 2014 */
-
 exports.showAllStickersWorldCup2014 = async (req, res) => {
   try {
     const resultado = await knex

@@ -1,3 +1,13 @@
-#error-page {
+#errorPage {
+  height: 600px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imgErrorPage {
+  width: 280px;
+  height: 300px;
 }
