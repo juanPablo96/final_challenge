@@ -13,7 +13,7 @@ function MundialBrasil() {
       };
       try {
         const response = await fetch(
-          "http://localhost:8000/api/stickersAlbum/mundial2014",
+          "http://localhost:8000/api/stickersAlbum/mundial2010",
           requestOptions
         );
         /*  console.log(response); */

@@ -6,7 +6,7 @@ exports.showAllStickers = async (req, res) => {
     const resultado = await knex
       .select("*")
       .from("sticker")
-      .where({ category: "mundial2010(futbol)" });
+      .where({ category: "mundial2010(fútbol)" });
 
     if (resultado.length === 0) {
       return res.status(200).json(`Se han agregado figuritas al álbum`);
@@ -66,7 +66,7 @@ exports.showMyStickersfilterSouthafrica = async (req, res) => {
       .orderBy("number")
       .select("*")
       .from("sticker")
-      .where({ category: "mundial2010(futbol)" });
+      .where({ category: "mundial2010(fútbol)" });
 
     if (resultado.length === 0) {
       return res.status(200).json(`ésta es tu colección de figuritas`);
@@ -84,7 +84,7 @@ exports.showAllStickersWorldCup2014 = async (req, res) => {
     const resultado = await knex
       .select("*")
       .from("sticker")
-      .where({ category: "mundial2014(futbol)" });
+      .where({ category: "mundial2014(fútbol)" });
 
     if (resultado.length === 0) {
       return res
@@ -106,7 +106,7 @@ exports.showMyStickersfilterBrasil = async (req, res) => {
       .orderBy("number")
       .select("*")
       .from("sticker")
-      .where({ category: "mundial2014(futbol)" });
+      .where({ category: "mundial2014(fútbol)" });
 
     if (resultado.length === 0) {
       return res.status(200).json(`ésta es tu colección de figuritas`);

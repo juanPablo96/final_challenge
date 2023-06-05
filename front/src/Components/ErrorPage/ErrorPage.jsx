@@ -12,7 +12,7 @@ export default function ErrorPage() {
       <h1>Ups!</h1>
       <h4>Error 404</h4>
       <img className="imgErrorPage" src={errorImg} alt="figurita rota" />
-      <p>La página no ha sido encontrada</p>
+      <h3>La página no ha sido encontrada</h3>
       <p>
         <Link to={"/"}>
           <Button variant="primary">Ir al inicio</Button>

@@ -101,7 +101,12 @@ const Sticker = (props) => {
             {props.sticker.name}
             <span>#{props.sticker.number}</span>
           </Card.Title>
-          <Card.Text>{props.sticker.country}</Card.Text>
+
+          <Card.Text>
+            {props.sticker.category}
+            <br />
+            {props.sticker.country}
+          </Card.Text>
           <div
             style={{
               display: "flex",
