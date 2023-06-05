@@ -56,14 +56,15 @@ exports.showMyStickers = async (req, res) => {
     return res.status(400).json({ error: error.message });
   }
 };
-/* Filtrado por Paises */
-exports.showMyStickersfilter = async (req, res) => {
+/* Filtrado por Paises de Mundial 2010 */
+exports.showMyStickersfilterSouthafrica = async (req, res) => {
   try {
     const resultado = await knex
       .column("number")
       .orderBy("number")
       .select("*")
-      .from("sticker");
+      .from("sticker")
+      .where({ category: "mundial2010(futbol)" });
 
     if (resultado.length === 0) {
       return res.status(200).json(`ésta es tu colección de figuritas`);
@@ -77,7 +78,7 @@ exports.showMyStickersfilter = async (req, res) => {
 
 /* Figuritas mundial 2014 */
 
-exports.showAllStickersmundial2014 = async (req, res) => {
+exports.showAllStickersWorldCup2014 = async (req, res) => {
   try {
     const resultado = await knex
       .select("*")
@@ -88,6 +89,26 @@ exports.showAllStickersmundial2014 = async (req, res) => {
       return res
         .status(200)
         .json(`Se han agregado figuritas al álbum del Mundial de Brasil 2014`);
+    }
+
+    return res.status(200).json(resultado);
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+};
+
+/* Filtrado por Paises de Mundial 2014 */
+exports.showMyStickersfilterBrasil = async (req, res) => {
+  try {
+    const resultado = await knex
+      .column("number")
+      .orderBy("number")
+      .select("*")
+      .from("sticker")
+      .where({ category: "mundial2014(futbol)" });
+
+    if (resultado.length === 0) {
+      return res.status(200).json(`ésta es tu colección de figuritas`);
     }
 
     return res.status(200).json(resultado);

@@ -69,11 +69,7 @@ function NavBar() {
               <Dropdown.Item eventKey="1" to="/" as={Link}>
                 Mundial 2010
               </Dropdown.Item>
-              <Dropdown.Item
-                eventKey="2"
-                to="/filtered/mundialBrasil2014"
-                as={Link}
-              >
+              <Dropdown.Item eventKey="2" to="/filtered/WorldCup2014" as={Link}>
                 Mundial 2014
               </Dropdown.Item>
             </DropdownButton>
@@ -90,8 +86,19 @@ function NavBar() {
               variant="dark"
               style={{ marginTop: "-7px" }}
             >
-              <Dropdown.Item eventKey="1" to="/filtered/country" as={Link}>
-                País
+              <Dropdown.Item
+                eventKey="1"
+                to="/filtered/country/WorldCup2010"
+                as={Link}
+              >
+                País Mundial 2010
+              </Dropdown.Item>
+              <Dropdown.Item
+                eventKey="2"
+                to="/filtered/country/WorldCup2014"
+                as={Link}
+              >
+                País Mundial 2014
               </Dropdown.Item>
             </DropdownButton>
           </ButtonGroup>

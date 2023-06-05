@@ -4,7 +4,7 @@ import "./App.css";
 import Main from "./Components/Page/Main";
 
 import NavBar from "./Components/NavBar/NavBar";
-import Country from "./Components/Page/Country";
+import Country from "./Components/Page/Country2010";
 import MundialBrasil from "./Components/Page/Sticker/MundialBrasil";
 import Fixture from "./Components/Page/Fixture/Fixture";
 /* import Collection from "./Components/Page/Collection";

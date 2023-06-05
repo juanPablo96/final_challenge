@@ -12,7 +12,7 @@ const Country = () => {
       };
       try {
         const response = await fetch(
-          "http://localhost:8000/api/stickersFiltered",
+          "http://localhost:8000/api/stickersFiltered/mundial2010",
           requestOptions
         );
         /*  console.log(response); */
