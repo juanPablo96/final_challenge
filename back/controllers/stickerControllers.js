@@ -1,8 +1,10 @@
 const knex = require("../config/knexfile");
 
+/* Figuritas mundial 2010 */
 exports.showAllStickers = async (req, res) => {
   try {
     const resultado = await knex.select("*").from("sticker");
+    /* .where({ category: "futbol2" }); */
 
     if (resultado.length === 0) {
       return res.status(200).json(`Se han agregado figuritas al álbum`);
@@ -14,11 +16,10 @@ exports.showAllStickers = async (req, res) => {
   }
 };
 
+/* Actualizar la cantidad de figuritas */
 exports.changeQuantity = async (req, res) => {
   try {
-    //registro en la tabla playlists
     const { id, quantity, own } = req.body;
-    /*  const sticker_id = Number(req.params.id); */
     console.log(quantity);
     const sticker = await knex("sticker")
       .where({ id: id })
@@ -53,7 +54,7 @@ exports.showMyStickers = async (req, res) => {
     return res.status(400).json({ error: error.message });
   }
 };
-
+/* Filtrado por Paises */
 exports.showMyStickersfilter = async (req, res) => {
   try {
     const resultado = await knex
@@ -64,6 +65,27 @@ exports.showMyStickersfilter = async (req, res) => {
 
     if (resultado.length === 0) {
       return res.status(200).json(`ésta es tu colección de figuritas`);
+    }
+
+    return res.status(200).json(resultado);
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+};
+
+/* Figuritas mundial 2014 */
+
+exports.showAllStickersmundial2014 = async (req, res) => {
+  try {
+    const resultado = await knex
+      .select("*")
+      .from("sticker")
+      .where({ category: "mundial2014(futbol)" });
+
+    if (resultado.length === 0) {
+      return res
+        .status(200)
+        .json(`Se han agregado figuritas al álbum del Mundial de Brasil 2014`);
     }
 
     return res.status(200).json(resultado);

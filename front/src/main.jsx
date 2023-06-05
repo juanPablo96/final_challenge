@@ -8,6 +8,7 @@ import "./index.css";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
 import Collection from "./Components/Page/Collection.jsx";
 import Country from "./Components/Page/Country.jsx";
+import MundialBrasil from "./Components/Page/Sticker/MundialBrasil.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: "/filtered/country",
     element: <Country />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/filtered/mundialBrasil2014",
+    element: <MundialBrasil />,
     errorElement: <ErrorPage />,
   },
 ]);

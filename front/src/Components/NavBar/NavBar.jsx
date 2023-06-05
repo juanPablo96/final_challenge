@@ -1,4 +1,6 @@
 import React from "react";
+import trophy from "../../assets/trophy.jpeg";
+import "./navBar.css";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -52,12 +54,30 @@ function NavBar() {
           flexDirection: "row",
         }}
       >
-        <Navbar.Brand href="#Album">Álbum</Navbar.Brand>
+        <Navbar.Brand href="#Album">
+          <img src={trophy} className="imgNavBar" alt="copa del mundo" />
+        </Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link to="/" as={Link}>
-            Home
-          </Nav.Link>
-
+          <ButtonGroup>
+            <DropdownButton
+              as={ButtonGroup}
+              title="Albums"
+              id="bg-nested-dropdown"
+              variant="dark"
+              style={{ marginTop: "-7px" }}
+            >
+              <Dropdown.Item eventKey="1" to="/" as={Link}>
+                Mundial 2010
+              </Dropdown.Item>
+              <Dropdown.Item
+                eventKey="2"
+                to="/filtered/mundialBrasil2014"
+                as={Link}
+              >
+                Mundial 2014
+              </Dropdown.Item>
+            </DropdownButton>
+          </ButtonGroup>
           <Nav.Link to="/myCollection" as={Link}>
             Mi Colección
           </Nav.Link>
