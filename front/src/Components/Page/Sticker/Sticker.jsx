@@ -7,9 +7,16 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useState } from "react";
 
+import Modal from "react-bootstrap/Modal";
+
 const Sticker = (props) => {
   const [own, setOwn] = useState(props.sticker.own);
   const [clickButton, setClickButton] = useState(false);
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const [quantity, setQuantity] = useState(props.sticker.quantity);
   const buttonAdd = () => {
@@ -33,8 +40,11 @@ const Sticker = (props) => {
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+
+    setShow(true);
   };
 
+  /*   para cambiar la cantidad de firguritas en la BD y para cmbiar el estado de "own" en la BD */
   const changeInput = (e) => {
     /*  setQuantity(e.target.value); */
     /*  console.log(setQuantity(parseInt(e.target.value)) == 0); */
@@ -118,9 +128,24 @@ const Sticker = (props) => {
             {clickButton ? (
               <div>
                 <h6>Cantidad:</h6>
+
                 <Button variant="primary" onClick={buttonAdd}>
                   Guardar
                 </Button>
+
+                <Modal show={show} onHide={handleClose} animation={false}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>
+                      Cantidad de Figurtias Guardadas con Éxito 😁
+                    </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <span role="img" aria-label="smile">
+                      Actualiza la página para ver tus cambios
+                    </span>
+                  </Modal.Body>
+                </Modal>
+
                 <Form.Control
                   style={{
                     display: "inline",

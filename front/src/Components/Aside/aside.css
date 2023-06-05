@@ -1,9 +1,0 @@
-.divAsideContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px black solid;
-  height: 400px;
-  width: 20rem;
-  margin: 10px;
-}
