@@ -6,6 +6,7 @@ import Main from "./Components/Page/Main";
 import NavBar from "./Components/NavBar/NavBar";
 import Country from "./Components/Page/Country";
 import MundialBrasil from "./Components/Page/Sticker/MundialBrasil";
+import Fixture from "./Components/Page/Fixture/Fixture";
 /* import Collection from "./Components/Page/Collection";
  */
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <div className="divAppContainer">
         {/*   <Aside /> */}
         <NavBar />
+        {/*  <Fixture /> */}
         <Main />
       </div>
     </>

@@ -3,8 +3,10 @@ const knex = require("../config/knexfile");
 /* Figuritas mundial 2010 */
 exports.showAllStickers = async (req, res) => {
   try {
-    const resultado = await knex.select("*").from("sticker");
-    /* .where({ category: "futbol2" }); */
+    const resultado = await knex
+      .select("*")
+      .from("sticker")
+      .where({ category: "mundial2010(futbol)" });
 
     if (resultado.length === 0) {
       return res.status(200).json(`Se han agregado figuritas al álbum`);
