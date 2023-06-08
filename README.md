@@ -1,7 +1,25 @@
-# final_challenge
+# sticker album
 
-sticker album
+:construction: project in construction :construction:
 
-The project is an album that contains it´s stickers and in subsequent updates it could have more than one album.
+This project is a final challenge of the fullstack BootCamp.
 
-Most of the components were made with boostrap
+The objective of it was to make an application that contains several albums and in these their stickers corresponded.
+
+At the moment, the application has two soccer albums and some of its figurines, but not all of them.
+In future updates of the project it is intended to have a fixture and that the user can complete and modify as desired.
+
+At the moment the user can add and remove cards from his collection. In addition, it is able to see the stickers organized randomly or by country.
+
+The technologies used were:
+
+Front end:
+html
+css
+React
+javascript
+React Bootstrap
+
+Back end:
+Nodejs
+express
