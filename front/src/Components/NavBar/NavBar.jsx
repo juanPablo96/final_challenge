@@ -58,12 +58,7 @@ function NavBar() {
 
   return (
     <Navbar expand="sm" bg="dark" variant="dark" fixed="top">
-      <Container
-        style={{
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
+      <Container>
         <Navbar.Brand href="#Album" to="/" as={Link}>
           <img src={trophy} className="imgNavBar" alt="copa del mundo" />
         </Navbar.Brand>
