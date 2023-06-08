@@ -8,8 +8,9 @@ import "./index.css";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
 import Collection from "./Components/Page/Collection.jsx";
 import Country2010 from "./Components/Page/Country2010.jsx";
-import MundialBrasil from "./Components/Page/Sticker/MundialBrasil.jsx";
-import Country2014 from "./Components/Page/Sticker/Country2014.jsx";
+import Country2014 from "./Components/Page/Country2014.jsx";
+import Album2014 from "./Components/Page/Album2014.jsx";
+import Album2010 from "./Components/Page/Album2010.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,10 +23,15 @@ const router = createBrowserRouter([
     element: <Collection />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: "/filtered/WorldCup2010",
+    element: <Album2010 />,
+    errorElement: <ErrorPage />,
+  },
 
   {
     path: "/filtered/WorldCup2014",
-    element: <MundialBrasil />,
+    element: <Album2014 />,
     errorElement: <ErrorPage />,
   },
 

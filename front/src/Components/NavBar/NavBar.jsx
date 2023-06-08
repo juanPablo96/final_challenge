@@ -1,6 +1,7 @@
 import React from "react";
 import trophy from "../../assets/trophy.jpeg";
 import "./navBar.css";
+import { useState } from "react";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -10,41 +11,50 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
+import Sticker from "../Page/Sticker/Sticker";
 
 function NavBar() {
-  /* 
-  function handleChange(e) {
-      e.preventDefault(); 
-    console.log(e.target.value);
-    props.setPokedex(
-      Pokedex.filter((item) => {
-        return item.Name.toLowerCase().includes(e.target.value);
-      })
-    );
-  }
-   ************* FILTRO NOMBRE ********** 
-  const onclickName = () => {
-    console.log("pepito");
-    const orderName = sticker.country.sort((a, b) => {
-      if (a.Name < b.Name) {
-        return -1;
-      }
-      if (a.Name > b.Name) {
-        return 1;
-      }
-      // a debe ser igual b
-      return 0;
-    });
-    console.log(orderName);
-    props.setPokedex([...orderName]);
-  };
+  /* const [input, setInput] = useState("");
+  const [stickers, setStickers] = useState([]);
+  const [stickersFiltrados, setStickersFiltrados] = useState([]);
 
-  
+  const onChange = async (event) => {
+    const inputValue = event.target.value.toLowerCase();
 
-  const showSort = () => {
-    setClickButton(!clickButton); 
+    setInput(inputValue);
+
+    var requestOptions = {
+      method: "GET",
+
+      redirect: "follow",
+    };
+
+    console.log(input);
+    try {
+      const response = await fetch(
+        `http://localhost:8000/api/sticker/${input}`,
+        requestOptions
+      );
+
+      console.log(response);
+      if (response.ok) {
+        const response = await response.json();
+        setStickers(response);
+
+        const filtradas = response.stickers.filter((sticker) => {
+          const name = sticker.name.toLowerCase();
+
+          return name.includes(inputValue);
+        });
+
+        setStickersFiltrados(filtradas);
+      } else {
+        alert("ocurrió un error del lado del cliente");
+      }
+    } catch (error) {
+      alert(error.message);
     }
- */
+  }; */
 
   return (
     <Navbar expand="sm" bg="dark" variant="dark" fixed="top">
@@ -54,7 +64,7 @@ function NavBar() {
           flexDirection: "row",
         }}
       >
-        <Navbar.Brand href="#Album">
+        <Navbar.Brand href="#Album" to="/" as={Link}>
           <img src={trophy} className="imgNavBar" alt="copa del mundo" />
         </Navbar.Brand>
         <Nav className="me-auto">
@@ -66,7 +76,7 @@ function NavBar() {
               variant="dark"
               style={{ marginTop: "-7px" }}
             >
-              <Dropdown.Item eventKey="1" to="/" as={Link}>
+              <Dropdown.Item eventKey="1" to="/filtered/WorldCup2010" as={Link}>
                 Mundial 2010
               </Dropdown.Item>
               <Dropdown.Item eventKey="2" to="/filtered/WorldCup2014" as={Link}>
@@ -103,7 +113,18 @@ function NavBar() {
             Mi Colección
           </Nav.Link>
 
-          <SearchBar />
+          <SearchBar /* onChange={onChange}  */ />
+          {/* {stickersFiltrados.length > 0 ? (
+            stickersFiltrados.map((sticker) => {
+              return (
+                <div key={sticker.id} className="divCardContainer">
+                  <Sticker sticker={sticker} />
+                </div>
+              );
+            })
+          ) : (
+            <div id="no-results">No se encontraron stickers.</div>
+          )}*/}
         </Nav>
       </Container>
     </Navbar>

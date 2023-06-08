@@ -1,9 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Sticker from "./Sticker";
-import NavBar from "../../NavBar/NavBar";
 
-function MundialBrasil() {
+import { useState, useEffect } from "react";
+
+import Sticker from "./Sticker/Sticker";
+import NavBar from "../NavBar/NavBar";
+const Country2014 = () => {
   const [stickers, setStickers] = useState([]);
 
   useEffect(() => {
@@ -13,7 +14,7 @@ function MundialBrasil() {
       };
       try {
         const response = await fetch(
-          "http://localhost:8000/api/stickersAlbum/mundial2010",
+          "http://localhost:8000/api/stickersFiltered/mundial2014",
           requestOptions
         );
         /*  console.log(response); */
@@ -45,6 +46,6 @@ function MundialBrasil() {
       })}
     </>
   );
-}
+};
 
-export default MundialBrasil;
+export default Country2014;

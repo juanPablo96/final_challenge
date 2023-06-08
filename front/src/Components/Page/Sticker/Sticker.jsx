@@ -57,16 +57,6 @@ const Sticker = (props) => {
       setOwn(false);
     }
     setQuantity(newQuantity);
-
-    /*    if (setQuantity(parseInt(e.target.value)) >= 1) {
-      console.log(e.target.value);
-      setOwn(true);
-    }
-    if (setQuantity(parseInt(e.target.value)) == 0) {
-      setOwn(false);
-    } else {
-      setOwn(true);
-    } */
   };
 
   const showSort = () => {
@@ -74,16 +64,7 @@ const Sticker = (props) => {
   };
   return (
     <>
-      <Card
-        className="cardStyles"
-        /*  style={{
-          width: "13rem",
-          marginLeft: "50px",
-          height: "29rem",
-          border: "2px solid",
-          borderColor: `green`,
-        }} */
-      >
+      <Card className="cardStyles">
         <Card.Img
           className="cardImgStyles"
           width={100}

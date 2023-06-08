@@ -1,43 +1,22 @@
 import React from "react";
-import Sticker from "./Sticker/Sticker";
-import { useState, useEffect } from "react";
+import "./main.css";
+import { Link } from "react-router-dom";
+
+import cover2010 from "../../assets/coverAlbum2010.png";
+import cover2014 from "../../assets/coverAlbum2014.png";
 const Main = () => {
-  const [stickers, setStickers] = useState([]);
-
-  useEffect(() => {
-    const fetchSticker = async () => {
-      var requestOptions = {
-        method: "GET",
-      };
-      try {
-        const response = await fetch(
-          "http://localhost:8000/api/stickersAlbum",
-          requestOptions
-        );
-        /*  console.log(response); */
-        if (response.ok) {
-          const data = await response.json();
-          setStickers(data);
-          /*  console.log(data); */
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchSticker();
-  }, []);
-
   return (
     <>
-      {stickers.map((sticker) => {
-        /*         console.log(sticker.name); */
-        return (
-          <div key={sticker.id} className="divCardContainer">
-            <Sticker sticker={sticker} />
-          </div>
-        );
-      })}
+      <Link to="/filtered/WorldCup2010">
+        <img
+          className="imgCover"
+          src={cover2010}
+          alt="Portada Albúm Sudáfrica"
+        />
+      </Link>
+      <Link to="/filtered/WorldCup2014">
+        <img className="imgCover" src={cover2014} alt="Portada Albúm Brasil" />
+      </Link>
     </>
   );
 };

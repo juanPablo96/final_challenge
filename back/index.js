@@ -6,6 +6,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const stickerRoutes = require("./routes/stickerRoutes");
+const searchRoutes = require("./routes/searchRoutes");
 
 //creamos el servidor con express
 const app = express();
@@ -17,7 +18,7 @@ app.use(cookieParser());
 app.use(cors());
 
 // colocar rutas
-app.use("/api", stickerRoutes);
+app.use("/api", stickerRoutes, searchRoutes);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {

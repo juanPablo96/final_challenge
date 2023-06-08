@@ -1,10 +1,8 @@
 import React from "react";
-
+import Sticker from "./Sticker/Sticker";
 import { useState, useEffect } from "react";
-
-import Sticker from "./Sticker";
-import NavBar from "../../NavBar/NavBar";
-const Country2014 = () => {
+import NavBar from "../NavBar/NavBar";
+const Album2010 = () => {
   const [stickers, setStickers] = useState([]);
 
   useEffect(() => {
@@ -14,7 +12,7 @@ const Country2014 = () => {
       };
       try {
         const response = await fetch(
-          "http://localhost:8000/api/stickersFiltered/mundial2014",
+          "http://localhost:8000/api/stickersAlbum",
           requestOptions
         );
         /*  console.log(response); */
@@ -34,8 +32,7 @@ const Country2014 = () => {
   return (
     <>
       <NavBar />
-      <h1 className="headerApp">Mundial de Brasil 2014</h1>
-
+      <h1 className="headerApp">Mundial de Sudáfrica 2010</h1>
       {stickers.map((sticker) => {
         /*         console.log(sticker.name); */
         return (
@@ -47,5 +44,4 @@ const Country2014 = () => {
     </>
   );
 };
-
-export default Country2014;
+export default Album2010;
